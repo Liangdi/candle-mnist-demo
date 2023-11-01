@@ -4,8 +4,19 @@ version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+default-run = "train"
+[[bin]]
+name = "train"
+path = "src/main.rs"
+[[bin]]
+name = "inference"
+path = "src/bin/inference.rs"
 
 [dependencies]
+anyhow = "1.0.75"
+candle = { version = "0.3.0", package = "candle-core" }
+candle-datasets = "0.3.0"
+candle-nn = "0.3.0"
 flate2 = "1.0.28"
 tracing = "0.1.40"
 tracing-subscriber = "0.3.17"

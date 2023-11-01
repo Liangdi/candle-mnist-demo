@@ -32,8 +32,6 @@ pub fn decompress_dataset(path: &str) {
             let input = BufReader::new(File::open(input.as_path()).unwrap());
             let mut decoder = bufread::GzDecoder::new(input);
             copy(&mut decoder, &mut output).unwrap();
-        } else {
-            info!("file exists:{}", temp.as_path().display());
-        }
+        } 
     }
 }
